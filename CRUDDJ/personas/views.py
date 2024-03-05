@@ -5,10 +5,7 @@ from django.http import  HttpResponse, JsonResponse
 import json
 # Create your views here.
 
-""" def inicio(request):
-    data=listar_ciudades()
-    return render(request,'persona/registro.html',data)
-"""
+
 def inicio(request):
    return render(request,'persona/login.html')
 def registrar_persona(request):
