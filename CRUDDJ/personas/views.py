@@ -7,7 +7,7 @@ import json
 
 
 def inicio(request):
-   return render(request,'persona/login.html')
+   return render(request,'persona/registro.html')
 def registrar_persona(request):
     if request.method== 'POST':
         documento=request.POST.get('documento')
