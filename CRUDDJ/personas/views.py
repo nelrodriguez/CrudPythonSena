@@ -7,6 +7,7 @@ import json
 
 
 def inicio(request):
+   
    return render(request,'persona/registro.html')
 def registrar_persona(request):
     if request.method== 'POST':
@@ -17,6 +18,7 @@ def registrar_persona(request):
         correo=request.POST.get('correo') 
         ciudad=request.POST.get('idCiudad') 
         
+        
         persona=Persona(
             documento=documento,
             nombre=nombre,
@@ -24,6 +26,7 @@ def registrar_persona(request):
             direccion=direccion,
             correo=correo,
             ciudad=Ciudad.objects.get(idCiudad=ciudad),
+            
         )
         
         persona.save()
@@ -52,7 +55,6 @@ def pre_editar_persona(request,id):
 def actualizar_persona(request,id):
     if request.method=="POST":
         persona=Persona.objects.get(id=id)
-        
         persona.documento=request.POST.get('documento')
         persona.nombre=request.POST.get('nombre')
         persona.apellido=request.POST.get('apellido')
